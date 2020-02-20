@@ -1,0 +1,19 @@
+{
+  "name": "blog-project",
+  "version": "1.0.0",
+  "description": "building a blog application with node.js, express.js and mongo.db",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cenwachukwu/blog-project.git"
+  },
+  "author": "Chiebuka Nwachukwu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cenwachukwu/blog-project/issues"
+  },
+  "homepage": "https://github.com/cenwachukwu/blog-project#readme"
+}
