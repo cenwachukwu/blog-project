@@ -2,13 +2,30 @@ import mongoose from 'mongoose'
 
 const blogSchema = new mongoose.Schema(
   {
-    name: {
+    title: {
       type: String,
       required: true,
-      trim: true,
-      maxlength: 50
+      trim: true
     },
-    description: String,
+    summary: {
+      type: String,
+      required: true,
+      trim: true
+    },
+    image: {
+      type: URL,
+      required: true,
+      trim: true
+    },
+    blogBody: {
+      type: String,
+      required: true,
+      trim: true
+    },
+    category: {
+      type: Array,
+      required: true
+    },
     createdBy: {
       type: mongoose.SchemaTypes.ObjectId,
       ref: 'user',
@@ -20,4 +37,4 @@ const blogSchema = new mongoose.Schema(
 
 blogSchema.index({ user: 1, name: 1 }, { unique: true })
 
-export const Blog = mongoose.model('list', blogSchema)
+export const Blog = mongoose.model('blog', blogSchema)
