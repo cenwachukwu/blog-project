@@ -15,8 +15,6 @@ var _blog = require("./blog.model");
 // res.status(404).send({message : "not found"})
 // controllers implements the logic that interacts with our database models
 // instead of writing a controller for everysingle crud function, we can have generalized controlers
-_blog.Blog.create({});
-
 var _default = (0, _crud.crudControllers)(_blog.Blog);
 
 exports.default = _default;

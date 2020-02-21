@@ -10,6 +10,4 @@ import { crudControllers } from '../../utils/crud'
 
 import { Blog } from './blog.model'
 
-Blog.create({})
-
 export default crudControllers(Blog)
