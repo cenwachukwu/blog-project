@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "build": "babel src --out-dir dist",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon --exec yarn restart",
-    "restart": "rimraf dist && yarn build && yarn start",
+    "test": "NODE_ENV=testing jest --forceExit --detectOpenHandles  --silent",
+    "dev": "nodemon --exec npm run restart",
+    "restart": "rimraf dist && npm run build && npm run start",
     "start": "node dist/index.js"
   },
   "repository": {
