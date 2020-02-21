@@ -22,6 +22,12 @@ const userSchema = new _mongoose.default.Schema({
     type: String,
     required: true
   },
+  username: {
+    type: String,
+    required: true,
+    unique: true,
+    trim: true
+  },
   settings: {
     theme: {
       type: String,
