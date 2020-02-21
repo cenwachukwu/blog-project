@@ -7,14 +7,16 @@ exports.default = void 0;
 
 var _express = require("express");
 
-var _blog = _interopRequireDefault(require("./blog.controllers"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+const controller = (req, res) => {
+  res.send({
+    message: 'Hello Blog'
+  });
+};
 
 const router = (0, _express.Router)(); // /api/list
 
-router.route('/').get(_blog.default.getOne).post(_blog.default.createOne); // /api/list/:id
+router.route('/').get(controller).post(controller); // /api/list/:id
 
-router.route('/:id').get(_blog.default.getOne).put(_blog.default.updateOne).delete(_blog.default.removeOne);
+router.route('/:id').get(controller).put(controller).delete(controller);
 var _default = router;
 exports.default = _default;

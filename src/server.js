@@ -4,6 +4,8 @@ import morgan from 'morgan'
 import config from './config'
 import cors from 'cors'
 import { connect } from './utils/db'
+import userRouter from './resources/user/user.router'
+import blogRouter from './resources/blog/blog.router'
 
 export const app = express()
 
@@ -14,14 +16,8 @@ app.use(json())
 app.use(urlencoded({ extended: true }))
 app.use(morgan('dev'))
 
-app.get('/data', (req, res) => {
-  res.json({ message: 'hello' })
-})
-
-app.post('/data', (req, res) => {
-  console.log(req.body)
-  res.status(200).end()
-})
+app.use('/api/blog', blogRouter)
+app.use('/api/user', userRouter)
 
 export const start = async () => {
   try {

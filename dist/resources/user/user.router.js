@@ -7,10 +7,16 @@ exports.default = void 0;
 
 var _express = require("express");
 
-var _user = require("./user.controllers");
+const controller = (req, res) => {
+  res.send({
+    message: 'Hello User'
+  });
+};
 
-const router = (0, _express.Router)();
-router.get('/', _user.me);
-router.put('/', _user.updateMe);
+const router = (0, _express.Router)(); // /api/list
+
+router.route('/').get(controller).post(controller); // /api/list/:id
+
+router.route('/:id').get(controller).put(controller).delete(controller);
 var _default = router;
 exports.default = _default;

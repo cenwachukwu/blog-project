@@ -17,6 +17,10 @@ var _cors = _interopRequireDefault(require("cors"));
 
 var _db = require("./utils/db");
 
+var _user = _interopRequireDefault(require("./resources/user/user.router"));
+
+var _blog = _interopRequireDefault(require("./resources/blog/blog.router"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const app = (0, _express.default)();
@@ -28,15 +32,8 @@ app.use((0, _bodyParser.urlencoded)({
   extended: true
 }));
 app.use((0, _morgan.default)('dev'));
-app.get('/data', (req, res) => {
-  res.json({
-    message: 'hello'
-  });
-});
-app.post('/data', (req, res) => {
-  console.log(req.body);
-  res.status(200).end();
-});
+app.use('/api/blog', _blog.default);
+app.use('/api/user', _user.default);
 
 const start = async () => {
   try {
