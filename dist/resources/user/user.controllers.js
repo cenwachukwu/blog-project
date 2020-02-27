@@ -7,7 +7,7 @@ exports.updateMe = exports.me = void 0;
 
 var _user = require("./user.model");
 
-const me = (req, res) => {
+const me = async (req, res) => {
   res.status(200).json({
     data: req.user
   });

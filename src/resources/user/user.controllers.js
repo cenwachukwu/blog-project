@@ -1,6 +1,6 @@
 import { User } from './user.model'
 
-export const me = (req, res) => {
+export const me = async (req, res) => {
   res.status(200).json({ data: req.user })
 }
 

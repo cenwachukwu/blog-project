@@ -1,22 +1,9 @@
 import { Router } from 'express'
-
-const controller = (req, res) => {
-  res.send({ message: 'Hello User' })
-}
+import { me, updateMe } from './user.controllers'
 
 const router = Router()
 
-// /api/list
-router
-  .route('/')
-  .get(controller)
-  .post(controller)
-
-// /api/list/:id
-router
-  .route('/:id')
-  .get(controller)
-  .put(controller)
-  .delete(controller)
+router.get('/', me)
+router.put('/', updateMe)
 
 export default router
